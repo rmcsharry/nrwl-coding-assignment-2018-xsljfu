@@ -5,17 +5,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BackendService } from './backend.service';
-import { CustomMaterialModule } from './custom-material/custom-material.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
-    CustomMaterialModule
+    AppRoutingModule
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
