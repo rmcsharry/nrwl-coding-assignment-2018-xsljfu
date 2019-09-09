@@ -1,8 +1,2 @@
-<h2>Tickets</h2>
+<router-outlet></router-outlet>
 
-<mat-nav-list>
-  <a mat-list-item *ngFor="let t of tickets|async"
-    href="">
-    Ticket: {{t.id}} {{t.description}}
-  </a>
-</mat-nav-list>

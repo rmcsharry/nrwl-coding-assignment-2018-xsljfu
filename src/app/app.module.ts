@@ -6,10 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BackendService } from './backend.service';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
+import { TicketItemComponent } from './ticket-item/ticket-item.component';
+import { TicketListComponent } from './ticket-list/ticket-list.component';
+import { TicketComponent } from './ticket/ticket.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TicketItemComponent,
+    TicketListComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,

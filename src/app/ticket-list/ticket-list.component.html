@@ -1,0 +1,8 @@
+<h2>Tickets</h2>
+
+<mat-nav-list>
+  <a mat-list-item *ngFor="let t of tickets|async"
+    href="ticket">
+    Ticket: {{t.id}} {{t.description}}
+  </a>
+</mat-nav-list>
