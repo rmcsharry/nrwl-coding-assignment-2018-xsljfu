@@ -6,6 +6,7 @@ import { TicketComponent } from './ticket/ticket.component';
 const routes: Routes = [
   { path: 'tickets', component: TicketListComponent },
   { path: 'ticket/:id', component: TicketComponent },
+  { path: '', redirectTo: 'tickets', pathMatch: 'full'}
 ];
 
 @NgModule({
