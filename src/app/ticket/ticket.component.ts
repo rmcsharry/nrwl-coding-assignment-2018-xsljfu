@@ -1,4 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ticket',
@@ -6,11 +7,16 @@ import {Component, OnInit, Input} from '@angular/core';
   styleUrls: ['./ticket.component.scss']
 })
 export class TicketComponent implements OnInit {
-  @Input() ticketId: Number = 0;
+  ticketId: Number = 0;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.route.params.subscribe(data => {
+      this.ticketId = +data['id']
+    })
   }
 
 }

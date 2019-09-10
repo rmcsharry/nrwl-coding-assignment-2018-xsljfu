@@ -2,7 +2,7 @@
 
 <mat-nav-list>
   <a mat-list-item *ngFor="let t of tickets|async"
-    href="ticket">
+    href="ticket/{{t.id}}">
     Ticket: {{t.id}} {{t.description}}
   </a>
 </mat-nav-list>

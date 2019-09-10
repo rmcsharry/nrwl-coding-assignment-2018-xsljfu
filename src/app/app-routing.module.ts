@@ -5,7 +5,7 @@ import { TicketComponent } from './ticket/ticket.component';
 
 const routes: Routes = [
   { path: 'tickets', component: TicketListComponent },
-  { path: 'ticket', component: TicketComponent },
+  { path: 'ticket/:id', component: TicketComponent },
 ];
 
 @NgModule({
