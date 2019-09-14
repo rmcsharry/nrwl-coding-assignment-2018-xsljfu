@@ -1,8 +1,12 @@
-<h2>Tickets</h2>
-
-<mat-nav-list>
-  <a mat-list-item *ngFor="let t of tickets|async"
-    href="ticket/{{t.id}}">
-    Ticket: {{t.id}} {{t.description}}
-  </a>
-</mat-nav-list>
+<div class="list-controls" fxLayoutGap="10px">
+  <a mat-raised-button color="primary" class="list-button" href="ticket/new">Add Ticket</a>
+  <a mat-raised-button color="danger" class="list-search" href="ticket/new">Delete Ticket</a>
+</div>
+<div class="list-items-container">
+  <mat-nav-list>
+    <a mat-list-item *ngFor="let t of tickets|async"
+      href="ticket/{{t.id}}">
+      Ticket: {{t.id}} {{t.description}}
+    </a>
+  </mat-nav-list>
+</div>

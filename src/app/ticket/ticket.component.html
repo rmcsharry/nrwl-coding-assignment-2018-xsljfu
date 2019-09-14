@@ -1,2 +1,15 @@
-<p>ticket works!</p>
-Ticket is {{ticketId}}
+<div class="item-controls" fxLayoutGap="10px">
+  <button mat-raised-button color="primary" class="">Assign Ticket</button>
+  <button mat-raised-button color="warn" class="">Delete Ticket</button>
+</div>
+<div class="list-item" *ngIf="ticket | async as t; else loading">
+  <p><label>Description</label> : {{t.description}}</p>
+  <p><label>Assigned to :</label> {{t.assigneeId}} -
+    <span *ngIf="assignee | async as user">
+        {{user.name}}
+    </span>
+  </p>
+  <p><label>Completed   :</label> {{t.completed}}</p>
+</div>
+<ng-template #loading>Loading Ticket data...</ng-template>
+

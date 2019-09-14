@@ -8,19 +8,25 @@ import { BackendService } from './backend.service';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
 import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { TicketNewComponent } from './ticket-new/ticket-new.component';
+import { PageTitleComponent } from './page-title/page-title.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     TicketComponent,
     TicketListComponent,
-    TicketComponent
+    TicketComponent,
+    TicketNewComponent,
+    PageTitleComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    FlexLayoutModule
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
