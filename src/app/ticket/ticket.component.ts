@@ -1,9 +1,9 @@
-import {Component, OnInit, Input, OnDestroy} from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {PageService} from '../page.service';
+import { PageService } from '../page.service';
 import { BackendService, Ticket, User } from '../backend.service';
 import { Observable, Subject } from 'rxjs';
-import { takeUntil, combineLatest, switchMap, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-ticket',
@@ -11,8 +11,8 @@ import { takeUntil, combineLatest, switchMap, tap } from 'rxjs/operators';
   styleUrls: ['./ticket.component.scss']
 })
 export class TicketComponent implements OnInit, OnDestroy {
-  public ticket: Observable<Ticket>;
-  public assignee: Observable<User>;
+  public ticket$: Observable<Ticket>;
+  public assignee$: Observable<User>;
   private destroy$ = new Subject();
 
   constructor(
@@ -24,9 +24,9 @@ export class TicketComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.route.params.subscribe(data => {
       this.pageService.setPageTitle(`Ticket ${+data['id']}`);
-      this.ticket = this.backendService.ticket(+data['id'])
+      this.ticket$ = this.backendService.ticket(+data['id'])
         .pipe(
-          tap(t => this.assignee = this.getUser(t.assigneeId))
+          tap(t => this.assignee$ = this.getUser(t.assigneeId))
         )
     });
   }

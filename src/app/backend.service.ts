@@ -20,7 +20,7 @@ export type Ticket = {
 };
 
 function randomDelay() {
-  return Math.random() * 0;
+  return Math.random() * 500;
 }
 
 @Injectable()
@@ -67,17 +67,17 @@ export class BackendService {
     return of(this.findUserById(id)).pipe(delay(randomDelay()));
   }
 
-  newTicket(payload: { description: string }) {
+  newTicket(payload: Ticket) {
     const newTicket: Ticket = {
       id: ++this.lastId,
       description: payload.description,
-      assigneeId: null,
-      completed: false
+      assigneeId: payload.assigneeId,
+      completed: payload.completed
     };
 
     return of(newTicket).pipe(
       delay(randomDelay()),
-      tap((ticket: Ticket) => this.storedTickets.push(ticket))
+      tap((ticket: Ticket) => { this.storedTickets.push(ticket); console.log(this.storedTickets) })
     );
   }
 

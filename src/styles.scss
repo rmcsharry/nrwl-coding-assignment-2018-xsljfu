@@ -2,8 +2,9 @@
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-label {
-  font-weight: 600;
+body {
+  color: black;
+  background: #c3c2b5;
 }
 .list-controls {
   display: flex;
@@ -11,7 +12,7 @@ label {
   justify-content: center;
   align-items: center;
   width: 480px;
-  padding-bottom: 20px;
+  padding: 20px 0;
 }
 .list-button {
   flex: 1;
@@ -37,5 +38,8 @@ label {
   justify-content: center;
   align-items: center;
   width: 480px;
-  padding-bottom: 20px;
+  padding: 20px 0;
+}
+.mat-form-field {
+  padding: 10px 0;
 }
