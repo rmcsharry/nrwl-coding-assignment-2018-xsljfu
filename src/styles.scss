@@ -23,8 +23,7 @@ body {
 .list-items-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
 }
 .list-item {
   display: flex;
