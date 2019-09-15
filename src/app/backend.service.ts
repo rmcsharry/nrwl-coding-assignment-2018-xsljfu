@@ -40,7 +40,7 @@ export class BackendService {
     }
   ];
 
-  storedUsers: User[] = [{ id: 111, name: 'Victor' }];
+  storedUsers: User[] = [{ id: 111, name: 'Victor' }, { id: 33, name: 'Richard'}];
 
   lastId = 1;
 
@@ -97,6 +97,14 @@ export class BackendService {
     return throwError(new Error('ticket or user not found'));
   }
 
+  updateTicket(payload: Ticket) {
+    const ticketIndex = this.storedTickets.findIndex((obj => obj.id == +payload.id));
+
+    this.storedTickets[ticketIndex] = payload;
+    return of(this.storedTickets[ticketIndex]).pipe(
+      delay(randomDelay())
+    );
+  }
   complete(ticketId: number, completed: boolean) {
     const foundTicket = this.findTicketById(+ticketId);
     if (foundTicket) {

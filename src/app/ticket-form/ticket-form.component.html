@@ -5,10 +5,14 @@
     <mat-hint>Keep it short & sweet!</mat-hint>
     <mat-error *ngIf="form.controls.description.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
-  <mat-form-field appearance="standard">
+  <mat-form-field>
     <mat-label>Assigned to</mat-label>
-    <input matInput placeholder="Select a user" formControlName="assigneeId">
-    <mat-hint>You can assign this later if you wish</mat-hint>
+    <mat-select formControlName="assigneeId" name="user">
+      <mat-option *ngFor="let user of users$ | async" [value]="user.id">
+        {{user.name}}
+      </mat-option>
+    </mat-select>
+    <mat-hint>Make them work hard!</mat-hint>
   </mat-form-field>
   <br>
   <mat-checkbox formControlName="completed">Ticket complete?</mat-checkbox>

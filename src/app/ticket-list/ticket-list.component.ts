@@ -8,8 +8,8 @@ import { PageService } from '../page.service';
   styleUrls: ['./ticket-list.component.scss']
 })
 export class TicketListComponent implements OnInit {
-  tickets = this.backend.tickets();
-  users = this.backend.users();
+  tickets$ = this.backend.tickets();
+  users$ = this.backend.users();
 
   constructor(
     private backend: BackendService,
