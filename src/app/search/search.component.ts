@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from '../search.service';
+import { SearchService } from '../services/search.service';
 import { FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 

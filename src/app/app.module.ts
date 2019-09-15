@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { BackendService } from './backend.service';
+import { BackendService } from './services/backend.service';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
 import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { TicketComponent } from './ticket/ticket.component';

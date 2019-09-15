@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PageService } from '../page.service';
-import { BackendService, Ticket, User } from '../backend.service';
+import { PageService } from '../services/page.service';
+import { BackendService, Ticket, User } from '../services/backend.service';
 import { Observable, Subject } from 'rxjs';
 import {tap, takeUntil} from 'rxjs/operators';
 

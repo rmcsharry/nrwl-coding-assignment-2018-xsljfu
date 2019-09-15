@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BackendService, Ticket, User } from '../backend.service';
-import { PageService } from '../page.service';
-import { SearchService } from '../search.service';
+import { BackendService, Ticket, User } from '../services/backend.service';
+import { PageService } from '../services/page.service';
+import { SearchService } from '../services/search.service';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil, map, startWith, switchMap, share } from 'rxjs/operators';
 
@@ -40,13 +40,11 @@ export class TicketListComponent implements OnInit, OnDestroy {
           return { search: searchTerm };
         })
     );
-    const source: Observable<Ticket[]> = searchSource.pipe(
+    this.tickets$ = searchSource.pipe(
       startWith({ search: this.term }),
       switchMap((params: { search: string }) => {
         return this.backendService.ticketsFiltered(params.search)
-      }),
-      share()
+      })
     );
-    this.tickets$ = source.pipe(takeUntil(this.destroy$));
   }
 }

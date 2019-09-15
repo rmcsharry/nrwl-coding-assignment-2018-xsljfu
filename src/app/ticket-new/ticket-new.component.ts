@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {PageService} from '../page.service';
-import { Ticket, BackendService } from '../backend.service';
+import {PageService} from '../services/page.service';
+import { Ticket, BackendService } from '../services/backend.service';
 import { tick } from '@angular/core/testing';
 import {Subject} from 'rxjs';
 import { takeUntil } from 'rxjs/operators';

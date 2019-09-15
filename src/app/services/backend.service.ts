@@ -22,7 +22,7 @@ export type Ticket = {
 };
 
 function randomDelay() {
-  return Math.random() * 500;
+  return Math.random() * 4000;
 }
 
 @Injectable()
@@ -65,7 +65,6 @@ export class BackendService {
   }
 
   ticket(id: number): Observable<Ticket> {
-    console.log(this.findTicketById(id))
     return of(this.findTicketById(id)).pipe(delay(randomDelay()));
   }
 

@@ -13,7 +13,6 @@ export class SearchService {
   onResetSearch = new Subject<any>();
 
   sendSearchTerm(term: string) {
-    console.log('sending search term:', term);
     this.searchTermStream.next(term)
   }
 
