@@ -5,6 +5,7 @@ import { tick } from '@angular/core/testing';
 import {Subject} from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-ticket-new',
@@ -18,7 +19,8 @@ export class TicketNewComponent implements OnInit, OnDestroy {
   constructor(
     private pageService: PageService,
     private backendService: BackendService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {
   }
 
@@ -34,7 +36,7 @@ export class TicketNewComponent implements OnInit, OnDestroy {
     this.backendService.newTicket(ticket).pipe(takeUntil(this.destroy$)).subscribe(
       data => {
         this.ticket = data;
-        alert(`Ticket ${data.id} created`)
+        this.snackBar.open(`Uh huh, ticket ${data.id} created!`, 'x', { duration: 3000 });
         this.router.navigate(['tickets']);
       });
   }
