@@ -1,6 +1,6 @@
 <div class="list-controls" fxLayoutGap="10px">
   <a mat-raised-button color="primary" class="list-button" [routerLink]="['/ticket/new']">Add Ticket</a>
-  <a mat-raised-button color="danger" class="list-search">Search Ticket</a>
+  <app-search class="list-search" ></app-search>
 </div>
 <div class="list-items-container">
   <mat-nav-list *ngIf="tickets$ | async as tickets; else loading">

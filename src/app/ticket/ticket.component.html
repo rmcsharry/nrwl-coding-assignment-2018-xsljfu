@@ -1,5 +1,5 @@
 <div class="list-item" *ngIf="ticket$ | async as ticket; else loading">
-    <app-ticket-form [ticket]='ticket' (onTicketSubmitted)="handleTicketSubmitted($event)"></app-ticket-form>
+  <app-ticket-form [ticket]='ticket' (onTicketSubmitted)="handleTicketSubmitted($event)"></app-ticket-form>
 </div>
 <ng-template #loading>Loading Ticket data...</ng-template>
 

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, tap } from 'rxjs/operators';
+import { del } from 'selenium-webdriver/http';
+import { match } from 'minimatch';
 
 /**
  * This service acts as a mock back-end.
@@ -49,6 +51,14 @@ export class BackendService {
   private findTicketById = id =>
     this.storedTickets.find(ticket => ticket.id === +id);
   private findUserById = id => this.storedUsers.find(user => user.id === +id);
+
+  private matchTerm = (ticket: Ticket, term: string) =>
+    ticket.description.includes(term)
+
+  ticketsFiltered(term) {
+    const filtered = this.storedTickets.filter(ticket => this.matchTerm(ticket, term));
+    return of(filtered).pipe(delay(randomDelay()));
+  }
 
   tickets() {
     return of(this.storedTickets).pipe(delay(randomDelay()));

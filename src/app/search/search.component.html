@@ -1,0 +1,7 @@
+<form [formGroup]="form" role="search" class="app-search" (ngSubmit)="onSearch(term.value)">
+  <mat-form-field appearance="standard">
+    <mat-label>Filter tickets</mat-label>
+    <input matInput placeholder="Find a ticket" formControlName="term">
+    <mat-hint>Use any text from ticket descriptions</mat-hint>
+  </mat-form-field>
+</form>

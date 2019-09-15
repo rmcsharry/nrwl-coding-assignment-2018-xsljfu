@@ -14,6 +14,7 @@ import { TicketNewComponent } from './ticket-new/ticket-new.component';
 import { PageTitleComponent } from './page-title/page-title.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TicketFormComponent } from './ticket-form/ticket-form.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TicketFormComponent } from './ticket-form/ticket-form.component';
     TicketComponent,
     TicketNewComponent,
     PageTitleComponent,
-    TicketFormComponent
+    TicketFormComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
