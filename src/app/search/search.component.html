@@ -3,5 +3,8 @@
     <mat-label>Filter tickets</mat-label>
     <input matInput placeholder="Find a ticket" formControlName="term">
     <mat-hint>Use any text from ticket descriptions</mat-hint>
+    <button mat-button *ngIf="term.value" matSuffix mat-icon-button aria-label="Clear" (click)="onClearSearch()">
+      <mat-icon>close</mat-icon>
+    </button>
   </mat-form-field>
 </form>

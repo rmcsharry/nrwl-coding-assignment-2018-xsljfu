@@ -42,4 +42,8 @@ export class SearchComponent implements OnInit {
     if (term !== null) this.searchService.sendSearchTerm(term);
   }
 
+  onClearSearch() {
+    this.term.setValue('');
+    this.searchService.sendSearchTerm('');
+  }
 }
